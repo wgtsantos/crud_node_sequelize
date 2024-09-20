@@ -91,73 +91,73 @@ http://localhost:3000\login
 
 ### Usuários
 
-# Lista todos os usuários (somente admin).
+#### Lista todos os usuários (somente admin).
 GET /users
 
-# Cria um novo usuário.
+#### Cria um novo usuário.
 POST /users
 
-# Exibe detalhes de um usuário.
+#### Exibe detalhes de um usuário.
 GET /users/:id
 
-# Edita as informações do usuário.
+#### Edita as informações do usuário.
 POST /users/edit/:id
 
-# Exclui o usuário.
+#### Exclui o usuário.
 POST /users/delete/:id
 
-# Torna um usuário administrador.
+#### Torna um usuário administrador.
 POST /users/tornar-admin/:id
 
-# Torna um administrador um usuário comum.
+#### Torna um administrador um usuário comum.
 POST /users/tornar-user/:id
 
 ### Livros
 
-# Lista todos os livros.
-GET /books
+#### Lista todos os livros.
+GET /livros
 
-# Adiciona um novo livro.
-POST /books
+#### Adiciona um novo livro.
+POST /livros
 
-# Exibe detalhes de um livro.
-GET /books/:id
+#### Exibe detalhes de um livro.
+GET /livros/:id
 
-# Edita as informações do livro.
-POST /books/edit/:id
+#### Edita as informações do livro.
+POST /livros/edit/:id
 
-# Exclui o livro.
-POST /books/delete/:id
+#### Exclui o livro.
+POST /livros/delete/:id
 
 ### Leitura
 
-# Admin visualiza o status de leitura de todos os usuários.
+#### Admin visualiza o status de leitura de todos os usuários.
 GET /leitura
 
-# Usuário obtém um livro e define o status de leitura.
+#### Usuário obtém um livro e define o status de leitura.
 GET /obter-livro/:id
 
-# Usuário edita o status de leitura de um livro já obtido.
+#### Usuário edita o status de leitura de um livro já obtido.
 POST /editar-status/:id
 
-# Contribuições
+### Contribuições
 Contribuições são bem-vindas! Siga os seguintes passos para contribuir:
 
-# Faça um fork do projeto.
-# Crie uma branch:
+#### Faça um fork do projeto.
+#### Crie uma branch:
 ```bash
 git checkout -b feature/minha-melhoria
 ```
 
-# Commit suas alterações:
+#### Commit suas alterações:
 ```bash
 git commit -m 'Adicionei uma nova funcionalidade'
 ```
 
-# Faça um push para a branch:
+#### Faça um push para a branch:
 ```bash
 git push origin feature/minha-melhoria
 ```
 
-## THANKS
+### THANKS
 
