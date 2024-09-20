@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard </title>
+</head>
+<body>
+    <h2> Painel de Administração </h2>
+
+    <!-- Link para cadastrar um novo livro -->
+    <a href="/add-livro"> Cadastrar Novo Livro </a>
+    <br/> <br/>
+
+    <!-- Link para visualizar todos os livros -->
+    <a href="/listarLivros"> Visualizar Livros Cadastrados </a>
+
+    <br/> <br/>
+    <!-- Link para visualizar usuários leitores -->
+    <a href="/leitura"> Visualizar Usuários Leitores </a>
+
+    <h3> Usuários Cadastrados </h3>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Gênero Favorito</th>
+            <th>Acesso</th>
+            <th> Ações </th>
+        </tr>
+        <% users.forEach(user => { %>
+        <tr>
+            <td> <%= user.id_usuario %> </td>
+            <td> <%= user.nome %> </td>
+            <td> <%= user.email %> </td>
+            <td> <%= user.genero_fav %> </td>
+            <td>
+                <!-- Botões de tornar admin ou usuário comum -->
+                <% if (user.acesso === 'admin') { %>
+                  <!-- Se o usuário já for admin, exibe botão para torná-lo usuário comum -->
+                  <form action="/tornar-user/<%= user.id_usuario %>" method="POST" style="display:inline;">
+                    <button type="submit">Tornar Usuário Comum</button>
+                  </form>
+                <% } else { %>
+                  <!-- Se o usuário for comum, exibe botão para torná-lo admin -->
+                  <form action="/tornar-admin/<%= user.id_usuario %>" method="POST" style="display:inline;">
+                    <button type="submit">Tornar Admin</button>
+                  </form>
+                <% } %>
+              </td>
+            <td> 
+                <button><a href="/edit/<%= user.id_usuario %>">Editar</a></button>
+                <form action="/delete/<%= user.id_usuario %>" method="post" style="display: inline;" onsubmit="return confirmDelete()">
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    <br/>
+    <a href="/logout">Logout</a>
+</body>
+<script src="/js/scriptDel.js"></script>
+<script src="/js/scriptAcesso.js"></script>
+</html>

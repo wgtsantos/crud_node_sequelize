@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Livro</title>
+</head>
+<body>
+  <h2>Cadastrar Livro</h2>
+  <form action="/add-livro" method="POST" enctype="multipart/form-data">
+    <label>Título:</label>
+    <input type="text" name="titulo" id="titulo" required>
+    <br/><br/>
+    <label>Autor:</label>
+    <input type="text" name="autor" id="autor" required>
+    <br/><br/>
+    <label>Gênero:</label>
+    <select name="genero" id="genero">
+        <option value="" selected="selected"> -- Selecione --</option>
+        <option value="fantasia">Fantasia</option>
+        <option value="ficcao-cientifica">Ficção Científica</option>
+        <option value="romance">Romance</option>
+        <option value="aventura">Aventura</option>
+        <option value="mistério">Mistério</option>
+        <option value="terror">Terror</option>
+        <option value="biografia">Biografia</option>
+        <option value="autoajuda">Autoajuda</option>
+        <option value="historia">História</option>
+        <option value="drama">Drama</option>
+        <option value="poesia">Poesia</option>
+        <option value="classicos">Clássicos</option>
+        <option value="romance-policial">Romance Policial</option>
+        <option value="juvenil">Juvenil</option>
+        <option value="literatura-infantojuvenil">Literatura Infantojuvenil</option>
+    </select>
+    <br/><br/>
+    <label>Descrição:</label>
+    <br/>
+    <textarea name="descricao" id="descricao" cols="40" rows="10"></textarea>
+    <br/><br/>
+    <label>Data de Lançamento:</label>
+    <input type="date" name="data_lanc" id="data_lanc" required>
+    <br/><br/>
+    <label>Imagem do Livro:</label>
+    <input type="file" name="imagem" id="imagem" accept="image/*">
+    <br/><br/>
+    <button type="submit" id="cadastrarLivro" name="cadastrarLivro">Cadastrar Livro</button>
+  </form>
+  <p> <a href="/dashboard">Voltar</a> </p>
+</body>
+<script src="/js/scriptCadLivro.js"></script>
+</html>

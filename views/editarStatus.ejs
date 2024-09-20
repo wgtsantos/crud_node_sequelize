@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Status da Leitura</title>
+</head>
+<body>
+  <h2> Editar Status da Leitura: </h2>
+  <h3> Livro: <%= livro.titulo %> </h3>
+
+  <% if (livro.imagem) { %>
+    <img src="/uploads/<%= livro.imagem %>" width="200" height="300" alt="Imagem do Livro">
+  <% } else { %>
+    Sem imagem
+  <% } %>
+
+  <br/><br/>
+
+  <form action="/editar-status/<%= leitura.id_livro %>" method="POST">
+    <label>Status da Leitura:</label>
+    <select name="status_leitura" required>
+      <option value="Não iniciado" <%= leitura.status_leitura === 'Não iniciado' ? 'selected' : '' %>>Não iniciado</option>
+      <option value="Em andamento" <%= leitura.status_leitura === 'Em andamento' ? 'selected' : '' %>>Em andamento</option>
+      <option value="Concluído" <%= leitura.status_leitura === 'Concluído' ? 'selected' : '' %>>Concluído</option>
+    </select><br/><br/>
+
+    <button type="submit">Atualizar Status</button>
+    <button><a href="/perfil">Voltar</a></button>
+  </form>
+</body>
+<script src="/js/scriptAttStatus.js"></script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela de Leituras</title>
+</head>
+<body>
+  <h2>Tabela de Leituras</h2>
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID Usuário</th>
+        <th>Nome do Usuário</th>
+        <th>ID Livro</th>
+        <th>Título do Livro</th>
+        <th>Status da Leitura</th>
+    </tr>
+</thead>
+<tbody>
+  <% leituras.forEach(leitura => { %>
+    <tr>
+      <td><%= leitura.id_livro %></td>
+      <td><%= leitura.id_usuario %></td>
+      <td><%= leitura.usuario.nome %></td> <!-- Nome do usuário -->
+      <td><%= leitura.id_livro %></td>
+      <td><%= leitura.livro.titulo %></td> <!-- Título do livro -->
+      <td><%= leitura.status_leitura %></td> <!-- Status da leitura -->
+    </tr>
+  <% }) %>
+</tbody>
+</table>
+
+<a href="/dashboard">Voltar ao Dashboard</a>
+</body>
+</html>

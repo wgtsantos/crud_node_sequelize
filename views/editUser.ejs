@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Editar Usuário </title>
+</head>
+<body>
+    <h2>Editar Usuário</h2>
+    <form action="/edit/<%= user.id_usuario %>" method="POST" id="editar" name="editar">
+    <label>Nome:</label>
+    <input type="text" name="nome" id="nome" value="<%= user.nome %>" required>
+    <br/>    <br/>
+    <label>E-mail:</label>
+    <input type="email" name="email" id="email" value="<%= user.email %>" required>
+    <br/>    <br/>
+    <label>Nova Senha:</label>
+    <input type="password" name="senha" id="senha" required>
+    <br/>    <br/>
+    <label>Confirmar Senha:</label>
+    <input type="password" name="confSenha" id="confSenha" required>
+    <br/>    <br/>
+    <label for="genero favorito"> Gênero Favorito: </label>
+    <select name="genero_fav" id="genero_fav" required>
+        <option value=""> -- Selecione --</option>
+        <option value="fantasia" <%= user.genero_fav === 'fantasia' ? 'selected' : '' %>>Fantasia</option>
+        <option value="ficcao-cientifica" <%= user.genero_fav === 'ficcao-cientifica' ? 'selected' : '' %>>Ficção Científica</option>
+        <option value="romance" <%= user.genero_fav === 'romance' ? 'selected' : '' %>>Romance</option>
+        <option value="aventura" <%= user.genero_fav === 'aventura' ? 'selected' : '' %>>Aventura</option>
+        <option value="mistério" <%= user.genero_fav === 'mistério' ? 'selected' : '' %>>Mistério</option>
+        <option value="terror" <%= user.genero_fav === 'terror' ? 'selected' : '' %>>Terror</option>
+        <option value="biografia" <%= user.genero_fav === 'biografia' ? 'selected' : '' %>>Biografia</option>
+        <option value="autoajuda" <%= user.genero_fav === 'autoajuda' ? 'selected' : '' %>>Autoajuda</option>
+        <option value="historia" <%= user.genero_fav === 'historia' ? 'selected' : '' %>>História</option>
+        <option value="drama" <%= user.genero_fav === "drama" ? 'selected' : '' %>>Drama</option>
+        <option value="poesia" <%= user.genero_fav === 'poesia' ? 'selected' : '' %>>Poesia</option>
+        <option value="classicos" <%= user.genero_fav === 'classicos' ? 'selected' : '' %>>Clássicos</option>
+        <option value="romance-policial" <%= user.genero_fav === 'romance-policial' ? 'selected' : '' %>>Romance Policial</option>
+        <option value="juvenil" <%= user.genero_fav === 'juvenil' ? 'selected' : '' %>>Juvenil</option>
+        <option value="literatura-infantojuvenil" <%= user.genero_fav === 'literatura-infantojuvenil' ? 'selected' : '' %>>Literatura Infantojuvenil</option>
+    </select>
+    <br/>    <br/>
+    <button type="submit" id="alterar" name="alterar"> Alterar Cadastro </button>
+  </form>
+  <p><a href="/dashboard">Voltar</a></p>
+</body>
+<script src="/js/scriptEdit.js"></script>
+</html>

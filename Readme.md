@@ -1,0 +1,1 @@
+## Desenvolvendo um CRUD com NODE e Express Salvando os dados no MySQL(MariaDB) com ORM Sequelize
