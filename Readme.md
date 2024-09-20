@@ -53,15 +53,16 @@ Este projeto é um sistema de gerenciamento de usuários e livros, implementado 
 - MySQL instalado
 
 ## Passos para rodar o projeto:
-# 1. Clone o repositório:
+### 1. Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/crud-livros-usuarios.git
 ```
+
+### 2. Instale as dependências:
 ```bash
-# 2. Instale as dependências:
 npm install
 ```
-# 3. Crie o banco de dados MySQL e configure a conexão no arquivo config/config.json:
+### 3. Crie o banco de dados MySQL e configure a conexão no arquivo config/config.json:
 
 ## Modelo Lógico 
 ![Modelo Lógico do Sistema](Modelo_Logico_Biblioteca.png)
@@ -77,15 +78,15 @@ npm install
   }
 }
 ```
-# 4. Rode as migrações para criar as tabelas no banco de dados:
+### 4. Rode as migrações para criar as tabelas no banco de dados:
 ```bash
 npx sequelize-cli db:migrate
 ```
-# 5. Inicie o servidor:
+### 5. Inicie o servidor:
 ```bash
 npm start
 ```
-# 6. Acesse a aplicação em:
+### 6. Acesse a aplicação em:
 ```bash
 http://localhost:3000\login
 
