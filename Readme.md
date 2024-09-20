@@ -62,12 +62,16 @@ git clone https://github.com/seu-usuario/crud-livros-usuarios.git
 npm install
 ```
 # 3. Crie o banco de dados MySQL e configure a conexão no arquivo config/config.json:
+
+## Modelo Lógico 
+![Modelo Lógico do Sistema](Modelo_Logico_Biblioteca.png)
+
 ```bash
 {
   "development": {
     "username": "root",
     "password": "sua-senha",
-    "database": "crud_livros_usuarios",
+    "database": "bibioteca",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
